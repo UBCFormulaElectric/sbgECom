@@ -8,7 +8,7 @@
  *
  * \copyright		Copyright (C) 2022, SBG Systems SAS. All rights reserved.
  * \beginlicense	The MIT license
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -26,7 +26,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * \endlicense
  */
 
@@ -40,7 +40,8 @@
 #include <sbgECom.h>
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 //----------------------------------------------------------------------//
@@ -48,39 +49,39 @@ extern "C" {
 //----------------------------------------------------------------------//
 
 /* Misc */
-#define SBG_ECOM_INFO_PRODUCT_CODE_LENGTH			(32)
+#define SBG_ECOM_INFO_PRODUCT_CODE_LENGTH (32)
 
-//----------------------------------------------------------------------//
-//- Device Info structure											   -//
-//----------------------------------------------------------------------//
+    //----------------------------------------------------------------------//
+    //- Device Info structure											   -//
+    //----------------------------------------------------------------------//
 
-/*!
- * Helper structure to retrieve device info.
- */
-typedef struct _SbgEComDeviceInfo
-{
-	uint8_t		productCode[SBG_ECOM_INFO_PRODUCT_CODE_LENGTH];	/*!< Human readable Product Code. */
-	uint32_t	serialNumber;									/*!< Device serial number */
-	uint32_t	calibationRev;									/*!< Calibration data revision */
-	uint16_t	calibrationYear;								/*!< Device Calibration Year */
-	uint8_t		calibrationMonth;								/*!< Device Calibration Month */
-	uint8_t		calibrationDay;									/*!< Device Calibration Day */
-	uint32_t	hardwareRev;									/*!< Device hardware revision */
-	uint32_t	firmwareRev;									/*!< Firmware revision */
-} SbgEComDeviceInfo;
+    /*!
+     * Helper structure to retrieve device info.
+     */
+    typedef struct _SbgEComDeviceInfo
+    {
+        uint8_t  productCode[SBG_ECOM_INFO_PRODUCT_CODE_LENGTH]; /*!< Human readable Product Code. */
+        uint32_t serialNumber;                                   /*!< Device serial number */
+        uint32_t calibationRev;                                  /*!< Calibration data revision */
+        uint16_t calibrationYear;                                /*!< Device Calibration Year */
+        uint8_t  calibrationMonth;                               /*!< Device Calibration Month */
+        uint8_t  calibrationDay;                                 /*!< Device Calibration Day */
+        uint32_t hardwareRev;                                    /*!< Device hardware revision */
+        uint32_t firmwareRev;                                    /*!< Firmware revision */
+    } SbgEComDeviceInfo;
 
-//----------------------------------------------------------------------//
-//- Public methods                                                     -//
-//----------------------------------------------------------------------//
+    //----------------------------------------------------------------------//
+    //- Public methods                                                     -//
+    //----------------------------------------------------------------------//
 
-/*!
- * Retrieve the device information.
- * 
- * \param[in]	pHandle						A valid sbgECom handle.
- * \param[in]	pInfo						A pointer to a structure to hold device information.
- * \return									SBG_NO_ERROR if the command has been executed successfully.
- */
-SbgErrorCode sbgEComCmdGetInfo(SbgEComHandle *pHandle, SbgEComDeviceInfo *pInfo);
+    /*!
+     * Retrieve the device information.
+     *
+     * \param[in]	pHandle						A valid sbgECom handle.
+     * \param[in]	pInfo						A pointer to a structure to hold device information.
+     * \return									SBG_NO_ERROR if the command has been executed successfully.
+     */
+    SbgErrorCode sbgEComCmdGetInfo(SbgEComHandle *pHandle, SbgEComDeviceInfo *pInfo);
 
 #ifdef __cplusplus
 }

@@ -33,12 +33,12 @@
 /*!
  * Number of bytes translated per line.
  */
-#define SBG_DEBUG_NR_BYTES_PER_LINE							(16)
+#define SBG_DEBUG_NR_BYTES_PER_LINE (16)
 
 /*!
  * Size of the buffer used to generate lines, in bytes.
  */
-#define SBG_DEBUG_LINE_BUFFER_SIZE							(256)
+#define SBG_DEBUG_LINE_BUFFER_SIZE (256)
 
 //----------------------------------------------------------------------//
 //- Private functions                                                  -//
@@ -54,56 +54,56 @@
  */
 static void sbgDebugHexDumpGenerateLine(char *pLine, size_t lineSize, const uint8_t *pBuffer, size_t size)
 {
-	size_t								 length;
+    size_t length;
 
-	assert(pLine);
-	assert(lineSize != 0);
-	assert(pBuffer);
-	assert(size <= SBG_DEBUG_NR_BYTES_PER_LINE);
+    assert(pLine);
+    assert(lineSize != 0);
+    assert(pBuffer);
+    assert(size <= SBG_DEBUG_NR_BYTES_PER_LINE);
 
-	for (size_t i = 0; i < size; i++)
-	{
-		length = snprintf(pLine, lineSize, "%02x ", pBuffer[i]);
-		assert(length < lineSize);
+    for (size_t i = 0; i < size; i++)
+    {
+        length = snprintf(pLine, lineSize, "%02x ", pBuffer[i]);
+        assert(length < lineSize);
 
-		pLine		= &pLine[length];
-		lineSize	-= length;
-	}
+        pLine = &pLine[length];
+        lineSize -= length;
+    }
 
-	for (size_t i = size; i < SBG_DEBUG_NR_BYTES_PER_LINE; i++)
-	{
-		length = snprintf(pLine, lineSize, "   ");
-		assert(length < lineSize);
+    for (size_t i = size; i < SBG_DEBUG_NR_BYTES_PER_LINE; i++)
+    {
+        length = snprintf(pLine, lineSize, "   ");
+        assert(length < lineSize);
 
-		pLine		= &pLine[length];
-		lineSize	-= length;
-	}
+        pLine = &pLine[length];
+        lineSize -= length;
+    }
 
-	length = snprintf(pLine, lineSize, " | ");
-	assert(length < lineSize);
+    length = snprintf(pLine, lineSize, " | ");
+    assert(length < lineSize);
 
-	pLine		= &pLine[length];
-	lineSize	-= length;
+    pLine = &pLine[length];
+    lineSize -= length;
 
-	for (size_t i = 0; i < size; i++)
-	{
-		char								 c;
+    for (size_t i = 0; i < size; i++)
+    {
+        char c;
 
-		if (isprint(pBuffer[i]))
-		{
-			c = pBuffer[i];
-		}
-		else
-		{
-			c = '.';
-		}
+        if (isprint(pBuffer[i]))
+        {
+            c = pBuffer[i];
+        }
+        else
+        {
+            c = '.';
+        }
 
-		length = snprintf(pLine, lineSize, "%c", c);
-		assert(length < lineSize);
+        length = snprintf(pLine, lineSize, "%c", c);
+        assert(length < lineSize);
 
-		pLine		= &pLine[length];
-		lineSize	-= length;
-	}
+        pLine = &pLine[length];
+        lineSize -= length;
+    }
 }
 
 //----------------------------------------------------------------------//
@@ -112,42 +112,42 @@ static void sbgDebugHexDumpGenerateLine(char *pLine, size_t lineSize, const uint
 
 void sbgDebugHexDump(const char *pPrefix, const void *pBuffer, size_t size)
 {
-	char								 line[SBG_DEBUG_LINE_BUFFER_SIZE];
-	size_t								 index = 0;
-	bool								 multiLine = false;
+    char   line[SBG_DEBUG_LINE_BUFFER_SIZE];
+    size_t index     = 0;
+    bool   multiLine = false;
 
-	assert(pPrefix);
-	assert(pBuffer || (size == 0));
+    assert(pPrefix);
+    assert(pBuffer || (size == 0));
 
-	if (size > SBG_DEBUG_NR_BYTES_PER_LINE)
-	{
-		SBG_LOG_DEBUG("%s: multi-line dump start (%zu bytes)", pPrefix, size);
-		multiLine = true;
-	}
+    if (size > SBG_DEBUG_NR_BYTES_PER_LINE)
+    {
+        SBG_LOG_DEBUG("%s: multi-line dump start (%zu bytes)", pPrefix, size);
+        multiLine = true;
+    }
 
-	while (size != 0)
-	{
-		const uint8_t						*pByteBuffer = pBuffer;
-		size_t								 rangeSize;
+    while (size != 0)
+    {
+        const uint8_t *pByteBuffer = pBuffer;
+        size_t         rangeSize;
 
-		if (size < SBG_DEBUG_NR_BYTES_PER_LINE)
-		{
-			rangeSize = size;
-		}
-		else
-		{
-			rangeSize = SBG_DEBUG_NR_BYTES_PER_LINE;
-		}
+        if (size < SBG_DEBUG_NR_BYTES_PER_LINE)
+        {
+            rangeSize = size;
+        }
+        else
+        {
+            rangeSize = SBG_DEBUG_NR_BYTES_PER_LINE;
+        }
 
-		sbgDebugHexDumpGenerateLine(line, sizeof(line), &pByteBuffer[index], rangeSize);
-		SBG_LOG_DEBUG("%s: %s", pPrefix, line);
+        sbgDebugHexDumpGenerateLine(line, sizeof(line), &pByteBuffer[index], rangeSize);
+        SBG_LOG_DEBUG("%s: %s", pPrefix, line);
 
-		size	-= rangeSize;
-		index	+= rangeSize;
-	}
+        size -= rangeSize;
+        index += rangeSize;
+    }
 
-	if (multiLine)
-	{
-		SBG_LOG_DEBUG("%s: multi-line dump end", pPrefix);
-	}
+    if (multiLine)
+    {
+        SBG_LOG_DEBUG("%s: multi-line dump end", pPrefix);
+    }
 }

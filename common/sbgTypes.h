@@ -10,7 +10,7 @@
  *
  * \copyright		Copyright (C) 2022, SBG Systems SAS. All rights reserved.
  * \beginlicense	The MIT license
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -28,7 +28,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * \endlicense
  */
 
@@ -44,40 +44,40 @@
 //----------------------------------------------------------------------//
 //- Limits definitions                                                 -//
 //----------------------------------------------------------------------//
-#define SBG_MIN_INT_24					(-8388608l)
-#define SBG_MAX_INT_24					(8388607l)
-#define SBG_MAX_UINT_24					(16777215ul)
+#define SBG_MIN_INT_24 (-8388608l)
+#define SBG_MAX_INT_24 (8388607l)
+#define SBG_MAX_UINT_24 (16777215ul)
 
-#define SBG_MIN_INT_40					(-549755813887ll - 1)
-#define SBG_MAX_INT_40					(549755813887ll)
-#define SBG_MAX_UINT_40					(1099511627775ull)
+#define SBG_MIN_INT_40 (-549755813887ll - 1)
+#define SBG_MAX_INT_40 (549755813887ll)
+#define SBG_MAX_UINT_40 (1099511627775ull)
 
-#define SBG_MIN_INT_48					(-140737488355327ll - 1)
-#define SBG_MAX_INT_48					(140737488355327ll)
-#define SBG_MAX_UINT_48					(281474976710655ull)
+#define SBG_MIN_INT_48 (-140737488355327ll - 1)
+#define SBG_MAX_INT_48 (140737488355327ll)
+#define SBG_MAX_UINT_48 (281474976710655ull)
 
-#define SBG_MIN_INT_56					(-36028797018963967ll - 1)
-#define SBG_MAX_INT_56					(36028797018963967ll)
-#define SBG_MAX_UINT_56					(72057594037927935ull)
+#define SBG_MIN_INT_56 (-36028797018963967ll - 1)
+#define SBG_MAX_INT_56 (36028797018963967ll)
+#define SBG_MAX_UINT_56 (72057594037927935ull)
 
 //----------------------------------------------------------------------//
 //- DEPRECATED: Scalar types definitions                               -//
 //----------------------------------------------------------------------//
-SBG_DEPRECATED_TYPEDEF(typedef unsigned char			uint8);		//  8 bits
-SBG_DEPRECATED_TYPEDEF(typedef unsigned short			uint16);	// 16 bits
-SBG_DEPRECATED_TYPEDEF(typedef unsigned int				uint32);	// 32 bits
-SBG_DEPRECATED_TYPEDEF(typedef unsigned long long int	uint64);	// 64 bits
+SBG_DEPRECATED_TYPEDEF(typedef unsigned char uint8);           //  8 bits
+SBG_DEPRECATED_TYPEDEF(typedef unsigned short uint16);         // 16 bits
+SBG_DEPRECATED_TYPEDEF(typedef unsigned int uint32);           // 32 bits
+SBG_DEPRECATED_TYPEDEF(typedef unsigned long long int uint64); // 64 bits
 
-SBG_DEPRECATED_TYPEDEF(typedef signed char				int8);		//  8 bits
-SBG_DEPRECATED_TYPEDEF(typedef signed short				int16);		// 16 bits
-SBG_DEPRECATED_TYPEDEF(typedef signed int				int32);		// 32 bits
-SBG_DEPRECATED_TYPEDEF(typedef signed long long int		int64);		// 64 bits
-
+SBG_DEPRECATED_TYPEDEF(typedef signed char int8);           //  8 bits
+SBG_DEPRECATED_TYPEDEF(typedef signed short int16);         // 16 bits
+SBG_DEPRECATED_TYPEDEF(typedef signed int int32);           // 32 bits
+SBG_DEPRECATED_TYPEDEF(typedef signed long long int int64); // 64 bits
 
 //----------------------------------------------------------------------//
 //- Misc types definitions                                             -//
 //----------------------------------------------------------------------//
-typedef uint32_t						sbgIpAddress;					/*!< Define an IP v4 address stored in 4 bytes. The format is A.B.C.D, each component is 8 bits and stored in Big Endian. */
+typedef uint32_t sbgIpAddress; /*!< Define an IP v4 address stored in 4 bytes. The format is A.B.C.D, each component is
+                                  8 bits and stored in Big Endian. */
 
 //------------------------------------------------------------------//
 //- Type punning safe conversion unions                            -//
@@ -88,8 +88,8 @@ typedef uint32_t						sbgIpAddress;					/*!< Define an IP v4 address stored in 4
  */
 typedef union _Uint8PtrToUint32Ptr
 {
-	uint8_t		*m_pointerUint8;				/*!< Set the address used to access the uint32_t. */
-	uint32_t	*m_pointerUint32;				/*!< Store the unint32 value. */
+    uint8_t * m_pointerUint8;  /*!< Set the address used to access the uint32_t. */
+    uint32_t *m_pointerUint32; /*!< Store the unint32 value. */
 } Uint8PtrToUint32Ptr;
 
 /*!
@@ -97,8 +97,8 @@ typedef union _Uint8PtrToUint32Ptr
  */
 typedef union _Uint8ToInt16
 {
-	int16_t		value;
-	uint8_t		buffer[2];
+    int16_t value;
+    uint8_t buffer[2];
 } Uint8ToInt16;
 
 /*!
@@ -106,8 +106,8 @@ typedef union _Uint8ToInt16
  */
 typedef union _Uint8ToUint16
 {
-	uint16_t	value;
-	uint8_t		buffer[2];
+    uint16_t value;
+    uint8_t  buffer[2];
 } Uint8ToUint16;
 
 /*!
@@ -115,8 +115,8 @@ typedef union _Uint8ToUint16
  */
 typedef union _Uint8ToInt32
 {
-	int32_t		value;
-	uint8_t		buffer[4];
+    int32_t value;
+    uint8_t buffer[4];
 } Uint8ToInt32;
 
 /*!
@@ -124,8 +124,8 @@ typedef union _Uint8ToInt32
  */
 typedef union _Uint8ToUint32
 {
-	uint32_t	value;
-	uint8_t		buffer[4];
+    uint32_t value;
+    uint8_t  buffer[4];
 } Uint8ToUint32;
 
 /*!
@@ -133,8 +133,8 @@ typedef union _Uint8ToUint32
  */
 typedef union _Uint8ToInt64
 {
-	int64_t		value;
-	uint8_t		buffer[8];
+    int64_t value;
+    uint8_t buffer[8];
 } Uint8ToInt64;
 
 /*!
@@ -142,8 +142,8 @@ typedef union _Uint8ToInt64
  */
 typedef union _Uint8ToUint64
 {
-	uint64_t	value;
-	uint8_t		buffer[8];
+    uint64_t value;
+    uint8_t  buffer[8];
 } Uint8ToUint64;
 
 /*!
@@ -151,9 +151,9 @@ typedef union _Uint8ToUint64
  */
 typedef union _FloatNint
 {
-	float		valF;
-	int32_t		valI;
-	uint32_t	valU;
+    float    valF;
+    int32_t  valI;
+    uint32_t valU;
 } FloatNint;
 
 /*!
@@ -161,9 +161,9 @@ typedef union _FloatNint
  */
 typedef union _DoubleNint
 {
-	double		valF;
-	uint64_t	valU;
-	int64_t		valI;
+    double   valF;
+    uint64_t valU;
+    int64_t  valI;
 } DoubleNint;
 
 /*!
@@ -171,24 +171,24 @@ typedef union _DoubleNint
  */
 typedef struct _Split64
 {
-	uint32_t	high;
-	uint32_t	low;
+    uint32_t high;
+    uint32_t low;
 } Split64;
 
 /*!
  * Set of 3 int32_t
  */
- typedef struct _SbgVector3i
- {
-	 int32_t	v[3];
- } SbgVector3i;
+typedef struct _SbgVector3i
+{
+    int32_t v[3];
+} SbgVector3i;
 
- /*!
+/*!
  * Set of 3 int64_t
  */
- typedef struct _SbgVector3ll
- {
-	 int64_t	v[3];
- } SbgVector3ll;
+typedef struct _SbgVector3ll
+{
+    int64_t v[3];
+} SbgVector3ll;
 
-#endif	/* SBG_TYPES_H */
+#endif /* SBG_TYPES_H */

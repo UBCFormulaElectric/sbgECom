@@ -7,7 +7,7 @@
  *
  * \copyright		Copyright (C) 2022, SBG Systems SAS. All rights reserved.
  * \beginlicense	Proprietary license
- * 
+ *
  * This source code is intended for use only by SBG Systems SAS and
  * those that have explicit written permission to use it from
  * SBG Systems SAS.
@@ -16,7 +16,7 @@
  * KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
  * PARTICULAR PURPOSE.
- * 
+ *
  * \endlicense
  */
 
@@ -38,10 +38,10 @@
  */
 typedef struct _SbgBasicLoggerFileDesc
 {
-	SbgEComClass						 class;						/*!< Message class. */
-	SbgEComMsgId						 id;						/*!< Message ID. */
-	const char							*pName;						/*!< The log name. */
-	const char							*pFileName;					/*!< File name suffix. */
+    SbgEComClass class;     /*!< Message class. */
+    SbgEComMsgId id;        /*!< Message ID. */
+    const char * pName;     /*!< The log name. */
+    const char * pFileName; /*!< File name suffix. */
 } SbgBasicLoggerFileDesc;
 
 //----------------------------------------------------------------------//

@@ -8,7 +8,7 @@
  *
  * \copyright		Copyright (C) 2022, SBG Systems SAS. All rights reserved.
  * \beginlicense	The MIT license
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -26,7 +26,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * \endlicense
  */
 
@@ -37,31 +37,35 @@
 #include <sbgCommon.h>
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
+    //----------------------------------------------------------------------//
+    //- Version definitions                                                -//
+    //----------------------------------------------------------------------//
 
-//----------------------------------------------------------------------//
-//- Version definitions                                                -//
-//----------------------------------------------------------------------//
+#define SBG_E_COM_VERSION_MAJOR 3
+#define SBG_E_COM_VERSION_MINOR 2
+#define SBG_E_COM_VERSION_REV 4011
+#define SBG_E_COM_VERSION_BUILD SBG_VERSION_QUALIFIER_STABLE
 
-#define SBG_E_COM_VERSION_MAJOR			3
-#define SBG_E_COM_VERSION_MINOR			2
-#define SBG_E_COM_VERSION_REV			4011
-#define SBG_E_COM_VERSION_BUILD			SBG_VERSION_QUALIFIER_STABLE
+#define SBG_E_COM_VERSION \
+    SBG_VERSION_SOFTWARE( \
+        SBG_E_COM_VERSION_MAJOR, SBG_E_COM_VERSION_MINOR, SBG_E_COM_VERSION_REV, SBG_E_COM_VERSION_BUILD)
 
-#define SBG_E_COM_VERSION				SBG_VERSION_SOFTWARE(SBG_E_COM_VERSION_MAJOR,SBG_E_COM_VERSION_MINOR,SBG_E_COM_VERSION_REV,SBG_E_COM_VERSION_BUILD)
-
-/*
- * Backward compatibility macro definitions.
- */
- #ifndef SBG_STR
-	#define SBG_STR(X)		#X
+    /*
+     * Backward compatibility macro definitions.
+     */
+#ifndef SBG_STR
+#define SBG_STR(X) #X
 #endif
 #ifndef SBG_ASSTR
-	#define SBG_ASSTR(X)	SBG_STR(X)
+#define SBG_ASSTR(X) SBG_STR(X)
 #endif
-#define SBG_E_COM_VERSION_STR			SBG_ASSTR(SBG_E_COM_VERSION_MAJOR) "." SBG_ASSTR(SBG_E_COM_VERSION_MINOR) "." SBG_ASSTR(SBG_E_COM_VERSION_REV) "-stable\0"
+#define SBG_E_COM_VERSION_STR          \
+    SBG_ASSTR(SBG_E_COM_VERSION_MAJOR) \
+    "." SBG_ASSTR(SBG_E_COM_VERSION_MINOR) "." SBG_ASSTR(SBG_E_COM_VERSION_REV) "-stable\0"
 
 #ifdef __cplusplus
 }

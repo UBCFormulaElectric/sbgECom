@@ -42,18 +42,18 @@
  */
 typedef struct _SbgBasicLoggerCommonHandler
 {
-	bool								 consoleEnabled;	/*!< True to print data on the console. */
-	size_t								 consoleDecimation;	/*!< Console decimation. */
-	size_t								 fileDecimation;	/*!< File decimation. */
-	bool								 writingFile;		/*!< True to save data into a file. */
-	bool								 writeHeader;		/*!< True to write header. */
-	bool								 headerWritten;		/*!< True if headers have been written. */
-	const SbgBasicLoggerFileDesc		*pDesc;				/*!< File descriptor. */
-	FILE								*pFILE;				/*!< File. */
+    bool                          consoleEnabled;    /*!< True to print data on the console. */
+    size_t                        consoleDecimation; /*!< Console decimation. */
+    size_t                        fileDecimation;    /*!< File decimation. */
+    bool                          writingFile;       /*!< True to save data into a file. */
+    bool                          writeHeader;       /*!< True to write header. */
+    bool                          headerWritten;     /*!< True if headers have been written. */
+    const SbgBasicLoggerFileDesc *pDesc;             /*!< File descriptor. */
+    FILE *                        pFILE;             /*!< File. */
 
-	const char							*pPathStr;			/*!< String path directory. */
-	SbgEComClass						 class;				/*!< Handler class. */
-	SbgEComMsgId						 id;				/*!< Handler message ID. */
+    const char *pPathStr; /*!< String path directory. */
+    SbgEComClass class;   /*!< Handler class. */
+    SbgEComMsgId id;      /*!< Handler message ID. */
 } SbgBasicLoggerCommonHandler;
 
 /*!
@@ -61,19 +61,18 @@ typedef struct _SbgBasicLoggerCommonHandler
  */
 typedef struct _SbgBasicLoggerImuHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 
-	SbgBasicLoggerImuAcc				 consoleAcc;		/*!< Decimated IMU data for the console. */
-	SbgBasicLoggerImuAcc				 fileAcc;			/*!< Decimated IMU data for the file. */
+    SbgBasicLoggerImuAcc consoleAcc; /*!< Decimated IMU data for the console. */
+    SbgBasicLoggerImuAcc fileAcc;    /*!< Decimated IMU data for the file. */
 } SbgBasicLoggerImuHandler;
-
 
 /*!
  * Diag log handler.
  */
 typedef struct _SbgBasicLoggerDiagHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerDiagHandler;
 
 /*!
@@ -81,7 +80,7 @@ typedef struct _SbgBasicLoggerDiagHandler
  */
 typedef struct _SbgBasicLoggerUtcHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerUtcHandler;
 
 /*!
@@ -89,7 +88,7 @@ typedef struct _SbgBasicLoggerUtcHandler
  */
 typedef struct _SbgBasicLoggerStatusHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerStatusHandler;
 
 /*!
@@ -97,7 +96,7 @@ typedef struct _SbgBasicLoggerStatusHandler
  */
 typedef struct _SbgBasicLoggerEkfEulerHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerEkfEulerHandler;
 
 /*!
@@ -105,7 +104,7 @@ typedef struct _SbgBasicLoggerEkfEulerHandler
  */
 typedef struct _SbgBasicLoggerEkfQuatHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerEkfQuatHandler;
 
 /*!
@@ -113,7 +112,7 @@ typedef struct _SbgBasicLoggerEkfQuatHandler
  */
 typedef struct _SbgBasicLoggerEkfNavHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerEkfNavHandler;
 
 /*!
@@ -121,7 +120,7 @@ typedef struct _SbgBasicLoggerEkfNavHandler
  */
 typedef struct _SbgBasicLoggerShipMotionHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerShipMotionHandler;
 
 /*!
@@ -129,7 +128,7 @@ typedef struct _SbgBasicLoggerShipMotionHandler
  */
 typedef struct _SbgBasicLoggerShipMotionHpHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerShipMotionHpHandler;
 
 /*!
@@ -137,7 +136,7 @@ typedef struct _SbgBasicLoggerShipMotionHpHandler
  */
 typedef struct _SbgBasicLoggerGpsVelHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerGpsVelHandler;
 
 /*!
@@ -145,7 +144,7 @@ typedef struct _SbgBasicLoggerGpsVelHandler
  */
 typedef struct _SbgBasicLoggerGpsPosHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerGpsPosHandler;
 
 /*!
@@ -153,7 +152,7 @@ typedef struct _SbgBasicLoggerGpsPosHandler
  */
 typedef struct _SbgBasicLoggerGpsHdtHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerGpsHdtHandler;
 
 /*!
@@ -161,7 +160,7 @@ typedef struct _SbgBasicLoggerGpsHdtHandler
  */
 typedef struct _SbgBasicLoggerGpsRawHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerGpsRawHandler;
 
 /*!
@@ -169,7 +168,7 @@ typedef struct _SbgBasicLoggerGpsRawHandler
  */
 typedef struct _SbgBasicLoggerGpsSatHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerGpsSatHandler;
 
 /*!
@@ -177,7 +176,7 @@ typedef struct _SbgBasicLoggerGpsSatHandler
  */
 typedef struct _SbgBasicLoggerOdometerHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerOdometerHandler;
 
 /*!
@@ -185,7 +184,7 @@ typedef struct _SbgBasicLoggerOdometerHandler
  */
 typedef struct _SbgBasicLoggerDvlHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerDvlHandler;
 
 /*!
@@ -193,7 +192,7 @@ typedef struct _SbgBasicLoggerDvlHandler
  */
 typedef struct _SbgBasicLoggerAirHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerAirHandler;
 
 /*!
@@ -201,7 +200,7 @@ typedef struct _SbgBasicLoggerAirHandler
  */
 typedef struct _SbgBasicLoggerUsblHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerUsblHandler;
 
 /*!
@@ -209,7 +208,7 @@ typedef struct _SbgBasicLoggerUsblHandler
  */
 typedef struct _SbgBasicLoggerDepthHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerDepthHandler;
 
 /*!
@@ -217,7 +216,7 @@ typedef struct _SbgBasicLoggerDepthHandler
  */
 typedef struct _SbgBasicLoggerRawRtcmHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerRawRtcmHandler;
 
 /*!
@@ -225,7 +224,7 @@ typedef struct _SbgBasicLoggerRawRtcmHandler
  */
 typedef struct _SbgBasicLoggerEventHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerEventHandler;
 
 /*!
@@ -233,7 +232,7 @@ typedef struct _SbgBasicLoggerEventHandler
  */
 typedef struct _SbgBasicLoggerMagHandler
 {
-	SbgBasicLoggerCommonHandler			 commonHandler;		/*!< Common with all handler logs. */
+    SbgBasicLoggerCommonHandler commonHandler; /*!< Common with all handler logs. */
 } SbgBasicLoggerMagHandler;
 
 //----------------------------------------------------------------------//
@@ -251,7 +250,14 @@ typedef struct _SbgBasicLoggerMagHandler
  * \param[in]	fileDecimation			File decimation.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerImuShortHandlerConstruct(SbgBasicLoggerImuHandler *pHandler, bool consoleEnabled, size_t consoleDecimation, bool writingFile, const char *pPathStr, size_t fileDecimation, bool writeHeader);
+void sbgBasicLoggerImuShortHandlerConstruct(
+    SbgBasicLoggerImuHandler *pHandler,
+    bool                      consoleEnabled,
+    size_t                    consoleDecimation,
+    bool                      writingFile,
+    const char *              pPathStr,
+    size_t                    fileDecimation,
+    bool                      writeHeader);
 
 /*!
  * IMU data handler constructor.
@@ -264,7 +270,14 @@ void sbgBasicLoggerImuShortHandlerConstruct(SbgBasicLoggerImuHandler *pHandler, 
  * \param[in]	fileDecimation			File decimation.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerImuHandlerConstruct(SbgBasicLoggerImuHandler *pHandler, bool consoleEnabled, size_t consoleDecimation, bool writingFile, const char *pPathStr, size_t fileDecimation, bool writeHeader);
+void sbgBasicLoggerImuHandlerConstruct(
+    SbgBasicLoggerImuHandler *pHandler,
+    bool                      consoleEnabled,
+    size_t                    consoleDecimation,
+    bool                      writingFile,
+    const char *              pPathStr,
+    size_t                    fileDecimation,
+    bool                      writeHeader);
 
 /*!
  * IMU fast handler constructor.
@@ -277,7 +290,14 @@ void sbgBasicLoggerImuHandlerConstruct(SbgBasicLoggerImuHandler *pHandler, bool 
  * \param[in]	fileDecimation			File decimation.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerImuFastHandlerConstruct(SbgBasicLoggerImuHandler *pHandler, bool consoleEnabled, size_t consoleDecimation, bool writingFile, const char *pPathStr, size_t fileDecimation, bool writeHeader);
+void sbgBasicLoggerImuFastHandlerConstruct(
+    SbgBasicLoggerImuHandler *pHandler,
+    bool                      consoleEnabled,
+    size_t                    consoleDecimation,
+    bool                      writingFile,
+    const char *              pPathStr,
+    size_t                    fileDecimation,
+    bool                      writeHeader);
 
 /*!
  * Process an IMU short handler with a new data.
@@ -287,7 +307,6 @@ void sbgBasicLoggerImuFastHandlerConstruct(SbgBasicLoggerImuHandler *pHandler, b
  */
 void sbgBasicLoggerImuHandlerProcess(SbgBasicLoggerImuHandler *pHandler, const SbgBasicLoggerImu *pNewData);
 
-
 /*!
  * Diagnostic handler constructor.
  *
@@ -296,7 +315,11 @@ void sbgBasicLoggerImuHandlerProcess(SbgBasicLoggerImuHandler *pHandler, const S
  * \param[in]	writingFile				True to write diag data into a file.
  * \param[in]	pPathStr				Path to write file logs.
  */
-void sbgBasicLoggerDiagHandlerConstruct(SbgBasicLoggerDiagHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr);
+void sbgBasicLoggerDiagHandlerConstruct(
+    SbgBasicLoggerDiagHandler *pHandler,
+    bool                       consoleEnabled,
+    bool                       writingFile,
+    const char *               pPathStr);
 
 /*!
  * Process a diagnostic data.
@@ -305,7 +328,10 @@ void sbgBasicLoggerDiagHandlerConstruct(SbgBasicLoggerDiagHandler *pHandler, boo
  * \param[in]	pLastUtcData			Last UTC data, used of timestamp.
  * \param[in]	pDiag					Diagnostic data.
  */
-void sbgBasicLoggerDiagHandlerProcess(SbgBasicLoggerDiagHandler *pHandler, SbgLogUtcData *pLastUtcData, const SbgLogDiagData *pDiag);
+void sbgBasicLoggerDiagHandlerProcess(
+    SbgBasicLoggerDiagHandler *pHandler,
+    SbgLogUtcData *            pLastUtcData,
+    const SbgLogDiagData *     pDiag);
 
 /*!
  * UTC handler constructor.
@@ -316,7 +342,12 @@ void sbgBasicLoggerDiagHandlerProcess(SbgBasicLoggerDiagHandler *pHandler, SbgLo
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerUtcHandlerConstruct(SbgBasicLoggerUtcHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerUtcHandlerConstruct(
+    SbgBasicLoggerUtcHandler *pHandler,
+    bool                      consoleEnabled,
+    bool                      writingFile,
+    const char *              pPathStr,
+    bool                      writeHeader);
 
 /*!
  * Process an UTC data.
@@ -336,7 +367,12 @@ void sbgBasicLoggerUtcHandlerProcess(SbgBasicLoggerUtcHandler *pHandler, const S
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerStatusHandlerConstruct(SbgBasicLoggerStatusHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerStatusHandlerConstruct(
+    SbgBasicLoggerStatusHandler *pHandler,
+    bool                         consoleEnabled,
+    bool                         writingFile,
+    const char *                 pPathStr,
+    bool                         writeHeader);
 
 /*!
  * Process a status data.
@@ -355,7 +391,12 @@ void sbgBasicLoggerStatusHandlerProcess(SbgBasicLoggerStatusHandler *pHandler, c
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerEkfEulerHandlerConstruct(SbgBasicLoggerEkfEulerHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerEkfEulerHandlerConstruct(
+    SbgBasicLoggerEkfEulerHandler *pHandler,
+    bool                           consoleEnabled,
+    bool                           writingFile,
+    const char *                   pPathStr,
+    bool                           writeHeader);
 
 /*!
  * Process a EKF Euler data.
@@ -374,7 +415,12 @@ void sbgBasicLoggerEkfEulerHandlerProcess(SbgBasicLoggerEkfEulerHandler *pHandle
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerEkfQuatHandlerConstruct(SbgBasicLoggerEkfQuatHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerEkfQuatHandlerConstruct(
+    SbgBasicLoggerEkfQuatHandler *pHandler,
+    bool                          consoleEnabled,
+    bool                          writingFile,
+    const char *                  pPathStr,
+    bool                          writeHeader);
 
 /*!
  * Process a EKF quat data.
@@ -393,7 +439,12 @@ void sbgBasicLoggerEkfQuatHandlerProcess(SbgBasicLoggerEkfQuatHandler *pHandler,
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerEkfNavHandlerConstruct(SbgBasicLoggerEkfNavHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerEkfNavHandlerConstruct(
+    SbgBasicLoggerEkfNavHandler *pHandler,
+    bool                         consoleEnabled,
+    bool                         writingFile,
+    const char *                 pPathStr,
+    bool                         writeHeader);
 
 /*!
  * Process a EKF nav data.
@@ -412,7 +463,12 @@ void sbgBasicLoggerEkfNavHandlerProcess(SbgBasicLoggerEkfNavHandler *pHandler, c
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerShipMotionHandlerConstruct(SbgBasicLoggerShipMotionHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerShipMotionHandlerConstruct(
+    SbgBasicLoggerShipMotionHandler *pHandler,
+    bool                             consoleEnabled,
+    bool                             writingFile,
+    const char *                     pPathStr,
+    bool                             writeHeader);
 
 /*!
  * Process a ship motion data.
@@ -420,7 +476,9 @@ void sbgBasicLoggerShipMotionHandlerConstruct(SbgBasicLoggerShipMotionHandler *p
  * \param[in]	pHandler				SHip motion handler.
  * \param[in]	pShipMotion				Ship motion data.
  */
-void sbgBasicLoggerShipMotionHandlerProcess(SbgBasicLoggerShipMotionHandler *pHandler, const SbgLogShipMotionData *pShipMotion);
+void sbgBasicLoggerShipMotionHandlerProcess(
+    SbgBasicLoggerShipMotionHandler *pHandler,
+    const SbgLogShipMotionData *     pShipMotion);
 
 /*!
  * Ship motion HP handler constructor.
@@ -431,7 +489,12 @@ void sbgBasicLoggerShipMotionHandlerProcess(SbgBasicLoggerShipMotionHandler *pHa
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerShipMotionHpHandlerConstruct(SbgBasicLoggerShipMotionHpHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerShipMotionHpHandlerConstruct(
+    SbgBasicLoggerShipMotionHpHandler *pHandler,
+    bool                               consoleEnabled,
+    bool                               writingFile,
+    const char *                       pPathStr,
+    bool                               writeHeader);
 
 /*!
  * Process a ship motion HP data.
@@ -439,7 +502,9 @@ void sbgBasicLoggerShipMotionHpHandlerConstruct(SbgBasicLoggerShipMotionHpHandle
  * \param[in]	pHandler				Ship motion HP handler.
  * \param[in]	pShipMotion				Ship motion HP data.
  */
-void sbgBasicLoggerShipMotionHpHandlerProcess(SbgBasicLoggerShipMotionHpHandler *pHandler, const SbgLogShipMotionData *pShipMotion);
+void sbgBasicLoggerShipMotionHpHandlerProcess(
+    SbgBasicLoggerShipMotionHpHandler *pHandler,
+    const SbgLogShipMotionData *       pShipMotion);
 
 /*!
  * GPS 1 vel handler constructor.
@@ -450,7 +515,12 @@ void sbgBasicLoggerShipMotionHpHandlerProcess(SbgBasicLoggerShipMotionHpHandler 
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerGpsVel1HandlerConstruct(SbgBasicLoggerGpsVelHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerGpsVel1HandlerConstruct(
+    SbgBasicLoggerGpsVelHandler *pHandler,
+    bool                         consoleEnabled,
+    bool                         writingFile,
+    const char *                 pPathStr,
+    bool                         writeHeader);
 
 /*!
  * GPS 2 vel handler constructor.
@@ -461,7 +531,12 @@ void sbgBasicLoggerGpsVel1HandlerConstruct(SbgBasicLoggerGpsVelHandler *pHandler
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerGpsVel2HandlerConstruct(SbgBasicLoggerGpsVelHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerGpsVel2HandlerConstruct(
+    SbgBasicLoggerGpsVelHandler *pHandler,
+    bool                         consoleEnabled,
+    bool                         writingFile,
+    const char *                 pPathStr,
+    bool                         writeHeader);
 
 /*!
  * Process a GPS vel data.
@@ -480,7 +555,12 @@ void sbgBasicLoggerGpsVelHandlerProcess(SbgBasicLoggerGpsVelHandler *pHandler, c
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerGpsPos1HandlerConstruct(SbgBasicLoggerGpsPosHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerGpsPos1HandlerConstruct(
+    SbgBasicLoggerGpsPosHandler *pHandler,
+    bool                         consoleEnabled,
+    bool                         writingFile,
+    const char *                 pPathStr,
+    bool                         writeHeader);
 
 /*!
  * GPS 2 handler constructor.
@@ -491,7 +571,12 @@ void sbgBasicLoggerGpsPos1HandlerConstruct(SbgBasicLoggerGpsPosHandler *pHandler
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerGpsPos2HandlerConstruct(SbgBasicLoggerGpsPosHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerGpsPos2HandlerConstruct(
+    SbgBasicLoggerGpsPosHandler *pHandler,
+    bool                         consoleEnabled,
+    bool                         writingFile,
+    const char *                 pPathStr,
+    bool                         writeHeader);
 
 /*!
  * Process a GPS data.
@@ -510,7 +595,12 @@ void sbgBasicLoggerGpsPosHandlerProcess(SbgBasicLoggerGpsPosHandler *pHandler, c
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerGpsHdt1HandlerConstruct(SbgBasicLoggerGpsHdtHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerGpsHdt1HandlerConstruct(
+    SbgBasicLoggerGpsHdtHandler *pHandler,
+    bool                         consoleEnabled,
+    bool                         writingFile,
+    const char *                 pPathStr,
+    bool                         writeHeader);
 
 /*!
  * GPS 2 hdt handler constructor.
@@ -520,7 +610,12 @@ void sbgBasicLoggerGpsHdt1HandlerConstruct(SbgBasicLoggerGpsHdtHandler *pHandler
  * \param[in]	writingFile				True to write GPS hdt data into a file.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerGpsHdt2HandlerConstruct(SbgBasicLoggerGpsHdtHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerGpsHdt2HandlerConstruct(
+    SbgBasicLoggerGpsHdtHandler *pHandler,
+    bool                         consoleEnabled,
+    bool                         writingFile,
+    const char *                 pPathStr,
+    bool                         writeHeader);
 
 /*!
  * Process a GPS hdt data.
@@ -539,7 +634,11 @@ void sbgBasicLoggerGpsHdtHandlerProcess(SbgBasicLoggerGpsHdtHandler *pHandler, c
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerGps1RawHandlerConstruct(SbgBasicLoggerGpsRawHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr);
+void sbgBasicLoggerGps1RawHandlerConstruct(
+    SbgBasicLoggerGpsRawHandler *pHandler,
+    bool                         consoleEnabled,
+    bool                         writingFile,
+    const char *                 pPathStr);
 
 /*!
  * GPS raw handler constructor.
@@ -550,7 +649,11 @@ void sbgBasicLoggerGps1RawHandlerConstruct(SbgBasicLoggerGpsRawHandler *pHandler
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerGps2RawHandlerConstruct(SbgBasicLoggerGpsRawHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr);
+void sbgBasicLoggerGps2RawHandlerConstruct(
+    SbgBasicLoggerGpsRawHandler *pHandler,
+    bool                         consoleEnabled,
+    bool                         writingFile,
+    const char *                 pPathStr);
 
 /*!
  * Process a GPS raw data.
@@ -569,7 +672,11 @@ void sbgBasicLoggerGpsRawHandlerProcess(SbgBasicLoggerGpsRawHandler *pHandler, c
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerGps1SatHandlerConstruct(SbgBasicLoggerGpsSatHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr);
+void sbgBasicLoggerGps1SatHandlerConstruct(
+    SbgBasicLoggerGpsSatHandler *pHandler,
+    bool                         consoleEnabled,
+    bool                         writingFile,
+    const char *                 pPathStr);
 
 /*!
  * GPS 2 Satellite in View handler constructor.
@@ -580,7 +687,11 @@ void sbgBasicLoggerGps1SatHandlerConstruct(SbgBasicLoggerGpsSatHandler *pHandler
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerGps2SatHandlerConstruct(SbgBasicLoggerGpsSatHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr);
+void sbgBasicLoggerGps2SatHandlerConstruct(
+    SbgBasicLoggerGpsSatHandler *pHandler,
+    bool                         consoleEnabled,
+    bool                         writingFile,
+    const char *                 pPathStr);
 
 /*!
  * Process a GPS Satellite in View data.
@@ -599,7 +710,12 @@ void sbgBasicLoggerGpsSatHandlerProcess(SbgBasicLoggerGpsSatHandler *pHandler, c
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerOdometerHandlerConstruct(SbgBasicLoggerOdometerHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerOdometerHandlerConstruct(
+    SbgBasicLoggerOdometerHandler *pHandler,
+    bool                           consoleEnabled,
+    bool                           writingFile,
+    const char *                   pPathStr,
+    bool                           writeHeader);
 
 /*!
  * Process an odometer data.
@@ -618,7 +734,12 @@ void sbgBasicLoggerOdometerHandlerProcess(SbgBasicLoggerOdometerHandler *pHandle
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerDvlBottomHandlerConstruct(SbgBasicLoggerDvlHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerDvlBottomHandlerConstruct(
+    SbgBasicLoggerDvlHandler *pHandler,
+    bool                      consoleEnabled,
+    bool                      writingFile,
+    const char *              pPathStr,
+    bool                      writeHeader);
 
 /*!
  * DVL water handler constructor.
@@ -629,7 +750,12 @@ void sbgBasicLoggerDvlBottomHandlerConstruct(SbgBasicLoggerDvlHandler *pHandler,
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerDvlWaterHandlerConstruct(SbgBasicLoggerDvlHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerDvlWaterHandlerConstruct(
+    SbgBasicLoggerDvlHandler *pHandler,
+    bool                      consoleEnabled,
+    bool                      writingFile,
+    const char *              pPathStr,
+    bool                      writeHeader);
 
 /*!
  * Process a DVL data.
@@ -648,7 +774,12 @@ void sbgBasicLoggerDvlHandlerProcess(SbgBasicLoggerDvlHandler *pHandler, const S
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerAirHandlerConstruct(SbgBasicLoggerAirHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerAirHandlerConstruct(
+    SbgBasicLoggerAirHandler *pHandler,
+    bool                      consoleEnabled,
+    bool                      writingFile,
+    const char *              pPathStr,
+    bool                      writeHeader);
 
 /*!
  * Process an air data.
@@ -667,7 +798,12 @@ void sbgBasicLoggerAirHandlerProcess(SbgBasicLoggerAirHandler *pHandler, const S
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerUsblHandlerConstruct(SbgBasicLoggerUsblHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerUsblHandlerConstruct(
+    SbgBasicLoggerUsblHandler *pHandler,
+    bool                       consoleEnabled,
+    bool                       writingFile,
+    const char *               pPathStr,
+    bool                       writeHeader);
 
 /*!
  * Process a USBL data.
@@ -686,7 +822,12 @@ void sbgBasicLoggerUsblHandlerProcess(SbgBasicLoggerUsblHandler *pHandler, const
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerDepthHandlerConstruct(SbgBasicLoggerDepthHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerDepthHandlerConstruct(
+    SbgBasicLoggerDepthHandler *pHandler,
+    bool                        consoleEnabled,
+    bool                        writingFile,
+    const char *                pPathStr,
+    bool                        writeHeader);
 
 /*!
  * Process a depth data.
@@ -705,7 +846,11 @@ void sbgBasicLoggerDepthHandlerProcess(SbgBasicLoggerDepthHandler *pHandler, con
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerRawRtcmHandlerConstruct(SbgBasicLoggerRawRtcmHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr);
+void sbgBasicLoggerRawRtcmHandlerConstruct(
+    SbgBasicLoggerRawRtcmHandler *pHandler,
+    bool                          consoleEnabled,
+    bool                          writingFile,
+    const char *                  pPathStr);
 
 /*!
  * Process a raw RTCM data.
@@ -714,7 +859,6 @@ void sbgBasicLoggerRawRtcmHandlerConstruct(SbgBasicLoggerRawRtcmHandler *pHandle
  * \param[in]	pData					Raw RTCM data.
  */
 void sbgBasicLoggerRawRtcmHandlerProcess(SbgBasicLoggerRawRtcmHandler *pHandler, const SbgLogRawData *pData);
-
 
 /*!
  * Event in A handler constructor.
@@ -725,7 +869,12 @@ void sbgBasicLoggerRawRtcmHandlerProcess(SbgBasicLoggerRawRtcmHandler *pHandler,
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerEventInAHandlerConstruct(SbgBasicLoggerEventHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerEventInAHandlerConstruct(
+    SbgBasicLoggerEventHandler *pHandler,
+    bool                        consoleEnabled,
+    bool                        writingFile,
+    const char *                pPathStr,
+    bool                        writeHeader);
 
 /*!
  * Event in B handler constructor.
@@ -736,7 +885,12 @@ void sbgBasicLoggerEventInAHandlerConstruct(SbgBasicLoggerEventHandler *pHandler
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerEventInBHandlerConstruct(SbgBasicLoggerEventHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerEventInBHandlerConstruct(
+    SbgBasicLoggerEventHandler *pHandler,
+    bool                        consoleEnabled,
+    bool                        writingFile,
+    const char *                pPathStr,
+    bool                        writeHeader);
 
 /*!
  * Event in C handler constructor.
@@ -747,7 +901,12 @@ void sbgBasicLoggerEventInBHandlerConstruct(SbgBasicLoggerEventHandler *pHandler
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerEventInCHandlerConstruct(SbgBasicLoggerEventHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerEventInCHandlerConstruct(
+    SbgBasicLoggerEventHandler *pHandler,
+    bool                        consoleEnabled,
+    bool                        writingFile,
+    const char *                pPathStr,
+    bool                        writeHeader);
 
 /*!
  * Event in D handler constructor.
@@ -758,7 +917,12 @@ void sbgBasicLoggerEventInCHandlerConstruct(SbgBasicLoggerEventHandler *pHandler
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerEventInDHandlerConstruct(SbgBasicLoggerEventHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerEventInDHandlerConstruct(
+    SbgBasicLoggerEventHandler *pHandler,
+    bool                        consoleEnabled,
+    bool                        writingFile,
+    const char *                pPathStr,
+    bool                        writeHeader);
 
 /*!
  * Event in E handler constructor.
@@ -769,7 +933,12 @@ void sbgBasicLoggerEventInDHandlerConstruct(SbgBasicLoggerEventHandler *pHandler
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerEventInEHandlerConstruct(SbgBasicLoggerEventHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerEventInEHandlerConstruct(
+    SbgBasicLoggerEventHandler *pHandler,
+    bool                        consoleEnabled,
+    bool                        writingFile,
+    const char *                pPathStr,
+    bool                        writeHeader);
 
 /*!
  * Event out A handler constructor.
@@ -780,7 +949,12 @@ void sbgBasicLoggerEventInEHandlerConstruct(SbgBasicLoggerEventHandler *pHandler
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerEventOutAHandlerConstruct(SbgBasicLoggerEventHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerEventOutAHandlerConstruct(
+    SbgBasicLoggerEventHandler *pHandler,
+    bool                        consoleEnabled,
+    bool                        writingFile,
+    const char *                pPathStr,
+    bool                        writeHeader);
 
 /*!
  * Event out B handler constructor.
@@ -791,7 +965,12 @@ void sbgBasicLoggerEventOutAHandlerConstruct(SbgBasicLoggerEventHandler *pHandle
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerEventOutBHandlerConstruct(SbgBasicLoggerEventHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerEventOutBHandlerConstruct(
+    SbgBasicLoggerEventHandler *pHandler,
+    bool                        consoleEnabled,
+    bool                        writingFile,
+    const char *                pPathStr,
+    bool                        writeHeader);
 
 /*!
  * Process an event data.
@@ -810,7 +989,12 @@ void sbgBasicLoggerEventHandlerProcess(SbgBasicLoggerEventHandler *pHandler, con
  * \param[in]	pPathStr				Path to write file logs.
  * \param[in]	writeHeader				True to print and write header.
  */
-void sbgBasicLoggerMagHandlerConstruct(SbgBasicLoggerMagHandler *pHandler, bool consoleEnabled, bool writingFile, const char *pPathStr, bool writeHeader);
+void sbgBasicLoggerMagHandlerConstruct(
+    SbgBasicLoggerMagHandler *pHandler,
+    bool                      consoleEnabled,
+    bool                      writingFile,
+    const char *              pPathStr,
+    bool                      writeHeader);
 
 /*!
  * Process a mag data.

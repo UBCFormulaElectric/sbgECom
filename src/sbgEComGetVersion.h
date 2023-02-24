@@ -7,7 +7,7 @@
  *
  * \copyright		Copyright (C) 2022, SBG Systems SAS. All rights reserved.
  * \beginlicense	The MIT license
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -25,7 +25,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * \endlicense
  */
 
@@ -36,26 +36,27 @@
 #include <sbgCommon.h>
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-//----------------------------------------------------------------------//
-//- Public methods                                                     -//
-//----------------------------------------------------------------------//
+    //----------------------------------------------------------------------//
+    //- Public methods                                                     -//
+    //----------------------------------------------------------------------//
 
-/*!
- * Returns an integer representing the version of the sbgECom library.
- *
- * \return										An integer representing the version of the sbgECom library.<br>
- */
-uint32_t sbgEComGetVersion(void);
+    /*!
+     * Returns an integer representing the version of the sbgECom library.
+     *
+     * \return										An integer representing the version of the sbgECom library.<br>
+     */
+    uint32_t sbgEComGetVersion(void);
 
-/*!
- * Retrieve the sbgECom library version as a string (1.0.443-stable).
- *
- * \return										Null terminated string that contains the sbgECom library version.
- */
-const char *sbgEComGetVersionAsString(void);
+    /*!
+     * Retrieve the sbgECom library version as a string (1.0.443-stable).
+     *
+     * \return										Null terminated string that contains the sbgECom library version.
+     */
+    const char *sbgEComGetVersionAsString(void);
 
 #ifdef __cplusplus
 }

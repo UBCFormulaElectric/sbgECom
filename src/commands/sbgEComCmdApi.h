@@ -8,7 +8,7 @@
  *
  * \copyright		Copyright (C) 2022, SBG Systems SAS. All rights reserved.
  * \beginlicense	The MIT license
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -26,7 +26,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * \endlicense
  */
 
@@ -41,79 +41,86 @@
 #include <protocol/sbgEComProtocol.h>
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
-//----------------------------------------------------------------------//
-//- Structure definitions                                              -//
-//----------------------------------------------------------------------//
+    //----------------------------------------------------------------------//
+    //- Structure definitions                                              -//
+    //----------------------------------------------------------------------//
 
-/*!
- * Reply to REST API commands.
- *
- * The reply content is a null-terminated string, normally in JSON format.
- *
- * The content directly refers to data inside the payload.
- */
-typedef struct _SbgEComCmdApiReply
-{
-	SbgEComProtocolPayload				 payload;									/*!< Payload. */
-	uint16_t							 statusCode;								/*!< Status code. */
-	const char							*pContent;									/*!< Content. */
-} SbgEComCmdApiReply;
+    /*!
+     * Reply to REST API commands.
+     *
+     * The reply content is a null-terminated string, normally in JSON format.
+     *
+     * The content directly refers to data inside the payload.
+     */
+    typedef struct _SbgEComCmdApiReply
+    {
+        SbgEComProtocolPayload payload;    /*!< Payload. */
+        uint16_t               statusCode; /*!< Status code. */
+        const char *           pContent;   /*!< Content. */
+    } SbgEComCmdApiReply;
 
-//----------------------------------------------------------------------//
-//- Public methods                                                     -//
-//----------------------------------------------------------------------//
+    //----------------------------------------------------------------------//
+    //- Public methods                                                     -//
+    //----------------------------------------------------------------------//
 
-/*!
- * REST API reply constructor.
- *
- * \param[in]	pReply						REST API reply.
- */
-void sbgEComCmdApiReplyConstruct(SbgEComCmdApiReply *pReply);
+    /*!
+     * REST API reply constructor.
+     *
+     * \param[in]	pReply						REST API reply.
+     */
+    void sbgEComCmdApiReplyConstruct(SbgEComCmdApiReply *pReply);
 
-/*!
- * REST API reply destructor.
- *
- * \param[in]	pReply						REST API reply.
- */
-void sbgEComCmdApiReplyDestroy(SbgEComCmdApiReply *pReply);
+    /*!
+     * REST API reply destructor.
+     *
+     * \param[in]	pReply						REST API reply.
+     */
+    void sbgEComCmdApiReplyDestroy(SbgEComCmdApiReply *pReply);
 
-/*!
- * Check if a reply indicates successful command execution.
- *
- * \param[in]	pReply						REST API reply.
- * \return									True if the reply indicates successful command execution.
- */
-bool sbgEComCmdApiReplySuccessful(const SbgEComCmdApiReply *pReply);
+    /*!
+     * Check if a reply indicates successful command execution.
+     *
+     * \param[in]	pReply						REST API reply.
+     * \return									True if the reply indicates successful command execution.
+     */
+    bool sbgEComCmdApiReplySuccessful(const SbgEComCmdApiReply *pReply);
 
-/*!
- * Send a GET command.
- *
- * The reply must be destroyed before the next attempt to receive data, either logs or command replies.
- *
- * \param[in]	pHandle						ECom handle.
- * \param[in]	pPath						URI path component.
- * \param[in]	pQuery						Query string, may be NULL.
- * \param[out]	pReply						Reply.
- * \return									SBG_NO_ERROR if successful.
- */
-SbgErrorCode sbgEComCmdApiGet(SbgEComHandle *pHandle, const char *pPath, const char *pQuery, SbgEComCmdApiReply *pReply);
+    /*!
+     * Send a GET command.
+     *
+     * The reply must be destroyed before the next attempt to receive data, either logs or command replies.
+     *
+     * \param[in]	pHandle						ECom handle.
+     * \param[in]	pPath						URI path component.
+     * \param[in]	pQuery						Query string, may be NULL.
+     * \param[out]	pReply						Reply.
+     * \return									SBG_NO_ERROR if successful.
+     */
+    SbgErrorCode
+        sbgEComCmdApiGet(SbgEComHandle *pHandle, const char *pPath, const char *pQuery, SbgEComCmdApiReply *pReply);
 
-/*!
- * Send a POST command.
- *
- * The reply must be destroyed before the next attempt to receive data, either logs or command replies.
- *
- * \param[in]	pHandle						ECom handle.
- * \param[in]	pPath						URI path component.
- * \param[in]	pQuery						Query string, may be NULL.
- * \param[in]	pBody						Body, may be NULL.
- * \param[out]	pReply						Reply.
- * \return									SBG_NO_ERROR if successful.
- */
-SbgErrorCode sbgEComCmdApiPost(SbgEComHandle *pHandle, const char *pPath, const char *pQuery, const char *pBody, SbgEComCmdApiReply *pReply);
+    /*!
+     * Send a POST command.
+     *
+     * The reply must be destroyed before the next attempt to receive data, either logs or command replies.
+     *
+     * \param[in]	pHandle						ECom handle.
+     * \param[in]	pPath						URI path component.
+     * \param[in]	pQuery						Query string, may be NULL.
+     * \param[in]	pBody						Body, may be NULL.
+     * \param[out]	pReply						Reply.
+     * \return									SBG_NO_ERROR if successful.
+     */
+    SbgErrorCode sbgEComCmdApiPost(
+        SbgEComHandle *     pHandle,
+        const char *        pPath,
+        const char *        pQuery,
+        const char *        pBody,
+        SbgEComCmdApiReply *pReply);
 
 #ifdef __cplusplus
 }

@@ -13,7 +13,7 @@
  *
  * \copyright		Copyright (C) 2022, SBG Systems SAS. All rights reserved.
  * \beginlicense	The MIT license
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -31,7 +31,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * \endlicense
  */
 
@@ -65,7 +65,14 @@
  * \param[in]	errorCode					The error code associated with the message.
  * \param[in]	pMessage					The message to log.
  */
-typedef void (*SbgCommonLibOnLogFunc)(const char *pFileName, const char *pFunctionName, uint32_t line, const char *pCategory, SbgDebugLogType logType, SbgErrorCode errorCode, const char *pMessage);
+typedef void (*SbgCommonLibOnLogFunc)(
+    const char *    pFileName,
+    const char *    pFunctionName,
+    uint32_t        line,
+    const char *    pCategory,
+    SbgDebugLogType logType,
+    SbgErrorCode    errorCode,
+    const char *    pMessage);
 
 //----------------------------------------------------------------------//
 //- Public functions                                                   -//
@@ -106,6 +113,14 @@ SBG_COMMON_LIB_API void sbgCommonLibSetLogCallback(SbgCommonLibOnLogFunc logCall
  * \param[in]	errorCode					The error code associated with the message.
  * \param[in]	pFormat						The error message that will be used with the variable list of arguments.
  */
-SBG_COMMON_LIB_API void sbgPlatformDebugLogMsg(const char *pFileName, const char *pFunctionName, uint32_t line, const char *pCategory, SbgDebugLogType logType, SbgErrorCode errorCode, const char *pFormat, ...) SBG_CHECK_FORMAT(printf, 7, 8);
+SBG_COMMON_LIB_API void sbgPlatformDebugLogMsg(
+    const char *    pFileName,
+    const char *    pFunctionName,
+    uint32_t        line,
+    const char *    pCategory,
+    SbgDebugLogType logType,
+    SbgErrorCode    errorCode,
+    const char *    pFormat,
+    ...) SBG_CHECK_FORMAT(printf, 7, 8);
 
 #endif // SBG_PLATFORM_H

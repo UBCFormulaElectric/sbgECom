@@ -12,17 +12,17 @@
 SBG_COMMON_LIB_API uint32_t sbgCommonLibGetVersion(void)
 {
 #ifdef USE_BUILD_NUMBER_GENERATOR
-	return SBG_COMMON_LIB_VERSION;
+    return SBG_COMMON_LIB_VERSION;
 #else
-	return 0;
+    return 0;
 #endif
 }
 
 SBG_COMMON_LIB_API bool sbgCommonLibIsDebug(void)
 {
 #ifdef NDEBUG
-	return false;
+    return false;
 #else
-	return true;
+    return true;
 #endif
 }

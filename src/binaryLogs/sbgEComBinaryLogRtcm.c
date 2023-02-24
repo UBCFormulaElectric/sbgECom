@@ -10,10 +10,10 @@
 
 SbgErrorCode sbgEComBinaryLogParseRtcmRawData(SbgStreamBuffer *pInputStream, SbgLogRawData *pOutputData)
 {
-	return sbgEComBinaryLogParseRawData(pInputStream, pOutputData);
+    return sbgEComBinaryLogParseRawData(pInputStream, pOutputData);
 }
 
 SbgErrorCode sbgEComBinaryLogWriteRtcmRawData(SbgStreamBuffer *pOutputStream, const SbgLogRawData *pInputData)
 {
-	return sbgEComBinaryLogWriteRawData(pOutputStream, pInputData);
+    return sbgEComBinaryLogWriteRawData(pOutputStream, pInputData);
 }

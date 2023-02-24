@@ -8,7 +8,7 @@
  *
  * \copyright		Copyright (C) 2022, SBG Systems SAS. All rights reserved.
  * \beginlicense	The MIT license
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -26,7 +26,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * \endlicense
  */
 
@@ -39,7 +39,8 @@
 #define SBG_COMMON_H
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 #include "sbgConfig.h"
@@ -54,7 +55,7 @@ extern "C" {
  * Default: Support only Aligned access - Disabled
  */
 #ifndef SBG_CONFIG_UNALIGNED_ACCESS_AUTH
-#define SBG_CONFIG_UNALIGNED_ACCESS_AUTH				(0)
+#define SBG_CONFIG_UNALIGNED_ACCESS_AUTH (0)
 #endif
 
 /*!
@@ -63,7 +64,7 @@ extern "C" {
  * Default: Little Endian - Disabled
  */
 #ifndef SBG_CONFIG_BIG_ENDIAN
-#define SBG_CONFIG_BIG_ENDIAN							(0)
+#define SBG_CONFIG_BIG_ENDIAN (0)
 #endif
 
 /*!
@@ -71,7 +72,7 @@ extern "C" {
  * Default: Enabled
  */
 #ifndef SBG_CONFIG_ENABLE_LOG_ERROR
-#define SBG_CONFIG_ENABLE_LOG_ERROR						(1)
+#define SBG_CONFIG_ENABLE_LOG_ERROR (1)
 #endif
 
 /*!
@@ -79,7 +80,7 @@ extern "C" {
  * Default: Enabled
  */
 #ifndef SBG_CONFIG_ENABLE_LOG_WARNING
-#define SBG_CONFIG_ENABLE_LOG_WARNING					(1)
+#define SBG_CONFIG_ENABLE_LOG_WARNING (1)
 #endif
 
 /*!
@@ -87,7 +88,7 @@ extern "C" {
  * Default: Enabled
  */
 #ifndef SBG_CONFIG_ENABLE_LOG_INFO
-#define SBG_CONFIG_ENABLE_LOG_INFO						(1)
+#define SBG_CONFIG_ENABLE_LOG_INFO (1)
 #endif
 
 /*!
@@ -95,7 +96,7 @@ extern "C" {
  * Default: Enabled
  */
 #ifndef SBG_CONFIG_ENABLE_LOG_DEBUG
-#define SBG_CONFIG_ENABLE_LOG_DEBUG						(1)
+#define SBG_CONFIG_ENABLE_LOG_DEBUG (1)
 #endif
 
 /*!
@@ -103,7 +104,7 @@ extern "C" {
  * Default: 1024
  */
 #ifndef SBG_CONFIG_LOG_MAX_SIZE
-#define SBG_CONFIG_LOG_MAX_SIZE							((size_t)(1024))
+#define SBG_CONFIG_LOG_MAX_SIZE ((size_t)(1024))
 #endif
 
 /*!
@@ -111,12 +112,12 @@ extern "C" {
  * Default: 256
  */
 #ifndef SBG_CONFIG_PATH_MAX_SIZE
-#define SBG_CONFIG_PATH_MAX_SIZE						((size_t)(256))
+#define SBG_CONFIG_PATH_MAX_SIZE ((size_t)(256))
 #endif
 
-//----------------------------------------------------------------------//
-//- Headers                                                            -//
-//----------------------------------------------------------------------//
+    //----------------------------------------------------------------------//
+    //- Headers                                                            -//
+    //----------------------------------------------------------------------//
 
 #include "sbgDefines.h"
 #include "sbgErrorCodes.h"
@@ -125,21 +126,21 @@ extern "C" {
 #include "debug/sbgDebug.h"
 #include "platform/sbgPlatform.h"
 
-//----------------------------------------------------------------------//
-//- Public functions                                                   -//
-//----------------------------------------------------------------------//
+    //----------------------------------------------------------------------//
+    //- Public functions                                                   -//
+    //----------------------------------------------------------------------//
 
-/*!
- * Retreive the current sbgCommonLib encoded version.
- * \return												The current sbgCommonLib version
- */
-SBG_COMMON_LIB_API uint32_t sbgCommonLibGetVersion(void);
+    /*!
+     * Retreive the current sbgCommonLib encoded version.
+     * \return												The current sbgCommonLib version
+     */
+    SBG_COMMON_LIB_API uint32_t sbgCommonLibGetVersion(void);
 
-/*!
- *	Tell if the library is compiled in debug mode or not
- *	\return						True if it's compiled in debug, False otherwise
- */
-SBG_COMMON_LIB_API bool sbgCommonLibIsDebug(void);
+    /*!
+     *	Tell if the library is compiled in debug mode or not
+     *	\return						True if it's compiled in debug, False otherwise
+     */
+    SBG_COMMON_LIB_API bool sbgCommonLibIsDebug(void);
 
 #ifdef __cplusplus
 }

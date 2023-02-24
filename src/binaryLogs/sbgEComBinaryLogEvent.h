@@ -8,7 +8,7 @@
  *
  * \copyright		Copyright (C) 2022, SBG Systems SAS. All rights reserved.
  * \beginlicense	The MIT license
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
@@ -26,7 +26,7 @@
  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
- * 
+ *
  * \endlicense
  */
 
@@ -38,7 +38,8 @@
 #include <streamBuffer/sbgStreamBuffer.h>
 
 #ifdef __cplusplus
-extern "C" {
+extern "C"
+{
 #endif
 
 //----------------------------------------------------------------------//
@@ -48,50 +49,51 @@ extern "C" {
 /*!
  * Log market events status mask definitions
  */
-#define	SBG_ECOM_EVENT_OVERFLOW			(0x00000001u << 0)		/*!< Set to 1 if we have received events at a higher rate than 1 kHz. */
-#define	SBG_ECOM_EVENT_OFFSET_0_VALID	(0x00000001u << 1)		/*!< Set to 1 if at least two events have been received. */
-#define	SBG_ECOM_EVENT_OFFSET_1_VALID	(0x00000001u << 2)		/*!< Set to 1 if at least three events have been received. */
-#define	SBG_ECOM_EVENT_OFFSET_2_VALID	(0x00000001u << 3)		/*!< Set to 1 if at least four events have been received. */
-#define	SBG_ECOM_EVENT_OFFSET_3_VALID	(0x00000001u << 4)		/*!< Set to 1 if at least five events have been received. */
+#define SBG_ECOM_EVENT_OVERFLOW \
+    (0x00000001u << 0) /*!< Set to 1 if we have received events at a higher rate than 1 kHz. */
+#define SBG_ECOM_EVENT_OFFSET_0_VALID (0x00000001u << 1) /*!< Set to 1 if at least two events have been received. */
+#define SBG_ECOM_EVENT_OFFSET_1_VALID (0x00000001u << 2) /*!< Set to 1 if at least three events have been received. */
+#define SBG_ECOM_EVENT_OFFSET_2_VALID (0x00000001u << 3) /*!< Set to 1 if at least four events have been received. */
+#define SBG_ECOM_EVENT_OFFSET_3_VALID (0x00000001u << 4) /*!< Set to 1 if at least five events have been received. */
 
-//----------------------------------------------------------------------//
-//- Log structure definitions                                          -//
-//----------------------------------------------------------------------//
+    //----------------------------------------------------------------------//
+    //- Log structure definitions                                          -//
+    //----------------------------------------------------------------------//
 
-/*!
- * Structure that stores data for the SBG_ECOM_LOG_EVENT_# message.
- */
-typedef struct _SbgLogEvent
-{
-	uint32_t	timeStamp;					/*!< Measurement time since the sensor power up. */
-	uint16_t	status;						/*!< Events status bitmask. */
-	uint16_t	timeOffset0;				/*!< Time offset for the second received event. */
-	uint16_t	timeOffset1;				/*!< Time offset for the third received event. */
-	uint16_t	timeOffset2;				/*!< Time offset for the fourth received event. */
-	uint16_t	timeOffset3;				/*!< Time offset for the fifth received event. */
-} SbgLogEvent;
+    /*!
+     * Structure that stores data for the SBG_ECOM_LOG_EVENT_# message.
+     */
+    typedef struct _SbgLogEvent
+    {
+        uint32_t timeStamp;   /*!< Measurement time since the sensor power up. */
+        uint16_t status;      /*!< Events status bitmask. */
+        uint16_t timeOffset0; /*!< Time offset for the second received event. */
+        uint16_t timeOffset1; /*!< Time offset for the third received event. */
+        uint16_t timeOffset2; /*!< Time offset for the fourth received event. */
+        uint16_t timeOffset3; /*!< Time offset for the fifth received event. */
+    } SbgLogEvent;
 
-//----------------------------------------------------------------------//
-//- Public methods                                                     -//
-//----------------------------------------------------------------------//
+    //----------------------------------------------------------------------//
+    //- Public methods                                                     -//
+    //----------------------------------------------------------------------//
 
-/*!
- * Parse data for the SBG_ECOM_LOG_EVENT_# message and fill the corresponding structure.
- * 
- * \param[in]	pInputStream				Input stream buffer to read the payload from.
- * \param[out]	pOutputData					Pointer on the output structure that stores parsed data.
- * \return									SBG_NO_ERROR if the payload has been parsed.
- */
-SbgErrorCode sbgEComBinaryLogParseEvent(SbgStreamBuffer *pInputStream, SbgLogEvent *pOutputData);
+    /*!
+     * Parse data for the SBG_ECOM_LOG_EVENT_# message and fill the corresponding structure.
+     *
+     * \param[in]	pInputStream				Input stream buffer to read the payload from.
+     * \param[out]	pOutputData					Pointer on the output structure that stores parsed data.
+     * \return									SBG_NO_ERROR if the payload has been parsed.
+     */
+    SbgErrorCode sbgEComBinaryLogParseEvent(SbgStreamBuffer *pInputStream, SbgLogEvent *pOutputData);
 
-/*!
- * Write data for the SBG_ECOM_LOG_EVENT_# message to the output stream buffer from the provided structure.
- * 
- * \param[out]	pOutputStream				Output stream buffer to write the payload to.
- * \param[in]	pInputData					Pointer on the input structure that stores data to write.
- * \return									SBG_NO_ERROR if the message has been generated in the provided buffer.
- */
-SbgErrorCode sbgEComBinaryLogWriteEvent(SbgStreamBuffer *pOutputStream, const SbgLogEvent *pInputData);
+    /*!
+     * Write data for the SBG_ECOM_LOG_EVENT_# message to the output stream buffer from the provided structure.
+     *
+     * \param[out]	pOutputStream				Output stream buffer to write the payload to.
+     * \param[in]	pInputData					Pointer on the input structure that stores data to write.
+     * \return									SBG_NO_ERROR if the message has been generated in the provided buffer.
+     */
+    SbgErrorCode sbgEComBinaryLogWriteEvent(SbgStreamBuffer *pOutputStream, const SbgLogEvent *pInputData);
 
 #ifdef __cplusplus
 }

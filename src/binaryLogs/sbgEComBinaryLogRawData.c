@@ -10,31 +10,31 @@
 
 SbgErrorCode sbgEComBinaryLogParseRawData(SbgStreamBuffer *pInputStream, SbgLogRawData *pOutputData)
 {
-	SbgErrorCode	errorCode = SBG_NO_ERROR;
-	size_t			payloadSize;
+    SbgErrorCode errorCode = SBG_NO_ERROR;
+    size_t       payloadSize;
 
-	assert(pInputStream);
-	assert(pOutputData);
+    assert(pInputStream);
+    assert(pOutputData);
 
-	payloadSize = sbgStreamBufferGetSize(pInputStream);
+    payloadSize = sbgStreamBufferGetSize(pInputStream);
 
-	if (payloadSize <= SBG_ECOM_RAW_DATA_MAX_BUFFER_SIZE)
-	{
-		errorCode = sbgStreamBufferReadBuffer(pInputStream, pOutputData->rawBuffer, payloadSize);
-		pOutputData->bufferSize = payloadSize;
-	}
-	else
-	{
-		errorCode = SBG_BUFFER_OVERFLOW;
-	}
+    if (payloadSize <= SBG_ECOM_RAW_DATA_MAX_BUFFER_SIZE)
+    {
+        errorCode               = sbgStreamBufferReadBuffer(pInputStream, pOutputData->rawBuffer, payloadSize);
+        pOutputData->bufferSize = payloadSize;
+    }
+    else
+    {
+        errorCode = SBG_BUFFER_OVERFLOW;
+    }
 
-	return errorCode;
+    return errorCode;
 }
 
 SbgErrorCode sbgEComBinaryLogWriteRawData(SbgStreamBuffer *pOutputStream, const SbgLogRawData *pInputData)
 {
-	assert(pOutputStream);
-	assert(pInputData);
+    assert(pOutputStream);
+    assert(pInputData);
 
-	return sbgStreamBufferWriteBuffer(pOutputStream, pInputData->rawBuffer, pInputData->bufferSize);
+    return sbgStreamBufferWriteBuffer(pOutputStream, pInputData->rawBuffer, pInputData->bufferSize);
 }
